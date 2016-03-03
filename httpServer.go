@@ -17,7 +17,7 @@ func (p Page) ServeHTTP(w http.ResponseWriter,r *http.Request) {
 func main() {
 	fmt.Println("server is on")
 	var p Page
-	err := http.ListenAndServe("localhost:8000",p)
+	err := http.ListenAndServe(":8080",p)
 	checkError(err)
 
 }
