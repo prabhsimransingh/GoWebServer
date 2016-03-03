@@ -2,10 +2,10 @@
 FROM golang:latest
 
 # Copy the local package files to the container’s workspace.
-ADD . /go/src/git.soma.salesforce.com/prabh-singh/GoWebServer
+ADD . /go/src/github.com/prabhsimransingh/GoWebServer
 
 # Build the golang-docker command inside the container.
-RUN go install git.soma.salesforce.com/prabh-singh/GoWebServer
+RUN go install github.com/prabhsimransingh/GoWebServer
 
 # Run the golang-docker command when the container starts.
 ENTRYPOINT /go/bin/GoWebServer
