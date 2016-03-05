@@ -1,0 +1,22 @@
+kind: ReplicationController
+apiVersion: v1
+metadata:
+name: goser-v1
+spec:
+  replicas: 3
+  selector:
+    name: goser
+    version: “1”
+  template:
+  metadata:
+    labels:
+      name: goser
+      version: “1”
+  spec:
+    containers:
+      — image: gcr.io/ku-test-cluster-1212/goser:v1
+        name: goser
+        ports:
+          — containerPort: 8080
+            hostPort: 8080
+            protocol: TCP
