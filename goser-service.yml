@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: goser
+  labels:
+    name: goser
+spec:
+  ports:
+    — port: 80
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    name: goser
+  type: LoadBalancer
